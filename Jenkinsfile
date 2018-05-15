@@ -9,8 +9,9 @@ pipeline {
         }
         stage('Jakes stage'){
             agent any
-            sh 'host -t TXT jjaobson20163.mainman.dcs'
-
+            steps {
+                sh 'host -t TXT jjaobson20163.mainman.dcs'
+            }
         }
     }
 }
