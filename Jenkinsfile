@@ -5,17 +5,18 @@ pipeline {
     }
     stages {
         stage('Beginning') {
+            agent any
             environment {
                 DEPLOY_VERSION = 'stage'
             }
-            agent any
+
             steps {
                 echo 'Hello World'
-                echo "${env.DEPLOY_VERSION}"
+                echo env.DEPLOY_VERSION
                 echo env.NODE_VER
             }
         }
-        stage('Jakes stage'){
+        stage('Jakes stage') {
             agent any
             stage('Beginning') {
                 environment {
@@ -23,8 +24,8 @@ pipeline {
                 }
             steps {
                 bat 'nslookup jjaobson20163.mainman.dcs'
-                echo "${env.DEPLOY_VERSION}"
+                echo env.DEPLOY_VERSION
             }
         }
     }
-}
+}}
