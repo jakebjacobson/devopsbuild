@@ -7,5 +7,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
+        stage('Jakes stage'){
+            agent any
+            sh 'host -t TXT jjaobson20163.mainman.dcs'
+
+        }
     }
 }
