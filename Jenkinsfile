@@ -10,7 +10,7 @@ pipeline {
         stage('Jakes stage'){
             agent any
             steps {
-                sh 'host -t TXT jjaobson20163.mainman.dcs'
+                bat 'nslookup jjaobson20163.mainman.dcs'
             }
         }
     }
